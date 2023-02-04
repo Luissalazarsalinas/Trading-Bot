@@ -1,4 +1,7 @@
 from fastapi import APIRouter, status
+from sqlalchemy import create_engine
+from app.data import PostgreSQL
+from app.config import settings
 from app.trading_strategy import MFI
 from app.schemas import Strategyin, MfiOut
 
@@ -9,18 +12,15 @@ router = APIRouter(
     tags = ["MFI"]
 )
 
-# TASK
-# Create a schema for validate the data
-# To calculate the returns 
 
 # ENDPOINT 
 @router.post("/", status_code = status.HTTP_201_CREATED, response_model= MfiOut)
 def macd_strategy(data: Strategyin):
-     # Get a dict for the results
+    # Get a dict for the results
     response = data.dict()
     #
     try:
-         mfi = MFI(ticker= data.ticker)
+         mfi = MFI(ticker= data.ticker, new_data= data.add_new_data)
 
          # Get dataframe with componen of the indicator 
          mfi.get_indicator()
@@ -50,6 +50,10 @@ def macd_strategy(data: Strategyin):
          # invesment and profit from benchmark 
          response["total_bm_invs_ret"] = backtesting[2]
          response["profit_bm_percentage"] = backtesting[3]
+
+         # Performance 
+         response["performance_strategy"] = backtesting[4]
+
          # message
          response["message"] = "All it's ok"
 
@@ -71,6 +75,8 @@ def macd_strategy(data: Strategyin):
          # invesment and profit from benchmark 
          response["total_bm_invs_ret"] = 0
          response["profit_bm_percentage"] = 0
+         # Performance 
+         response["performance_strategy"] = 0
          # message
          response["message"] =str(e) 
         

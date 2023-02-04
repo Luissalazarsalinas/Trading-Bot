@@ -6,6 +6,7 @@ from pydantic import BaseModel
 class Strategyin(BaseModel):
     ticker: str
     invesment_mount: int
+    add_new_data: bool
 
 class MacdOut(Strategyin):
     
@@ -20,6 +21,7 @@ class MacdOut(Strategyin):
     profit_percentage: int
     total_bm_invs_ret: int
     profit_bm_percentage: int
+    performance_strategy: int
     message: str
 
 # MFI
@@ -36,6 +38,7 @@ class MfiOut(Strategyin):
     profit_percentage: int
     total_bm_invs_ret: int
     profit_bm_percentage: int
+    performance_strategy: int
     message: str
 
 

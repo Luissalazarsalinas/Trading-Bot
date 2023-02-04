@@ -1,5 +1,6 @@
 import requests
 import pandas as pd
+from sqlalchemy import create_engine, text
 from app.config import settings
 
 
@@ -46,5 +47,58 @@ class AlphaVantageApi():
         df.columns = [c.split(". ")[1] for c in df.columns]
         # Sort data
         df.sort_index(ascending=True, inplace= True)
+
+        return df
+
+
+## Stored data into postgresql
+class PostgreSQL():
+
+    def __db_connection(self):
+        ## Connection with the database
+        postgresurl = (
+            "postgresql+psycopg2://"
+            f"{settings.database_username}:"
+            f"{settings.database_password}@"
+            f"{settings.database_hostname}:"
+            f"{settings.database_port}/"
+            f"{settings.database_name}"
+            )
+        self.engine = create_engine(
+            postgresurl 
+            ) 
+    
+    def insert_table(self, data: pd.DataFrame, table_name:str, if_exists:str = "replace"):
+        # Connection
+        self.__db_connection()
+
+        ## Insert values into a database
+        with self.engine.connect().execution_options(autocommit = True) as conn:
+            n_inserted = data.to_sql(
+                name= table_name,
+                con= conn,
+                if_exists= if_exists
+                )
+
+        return {
+            "transaction_successful": True,
+            "records_inserted": n_inserted
+        }
+
+    def read_table(self, table_name:str):
+        # Connection
+        self.__db_connection()
+        
+        # # SQL QUERY
+        # query = f"""SELECT * FROM {table_name}"""
+
+        # read data
+        with self.engine.connect().execution_options(autocommit = True) as conn:
+            df = pd.read_sql(
+                f'''SELECT * FROM "{table_name}"''',
+                con= conn,
+                parse_dates= "date",
+                index_col= "date"
+        )
 
         return df

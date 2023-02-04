@@ -2,22 +2,38 @@
 import numpy as np
 import pandas as pd
 import math
+from app.data import PostgreSQL
 from app.data import AlphaVantageApi
 
 class MACD():
-    """
-    """
-    def __init__(self, ticker):
-        
+    
+    def __init__(self, ticker, new_data):
+    
         self.ticker = ticker
-
+        self.new_data = new_data
 
     def get_indicator(self):
         
-        # Get daily data
-        av = AlphaVantageApi()
-        # Stored data into a object variable
-        self.df =  av.get_daily(ticker = self.ticker)
+        # Instance for postgres database
+        pg = PostgreSQL()
+
+        if self.new_data:
+            
+            # Get daily data
+            av = AlphaVantageApi()
+            # Stored data into a object variable
+            new_data =  av.get_daily(ticker = self.ticker)
+
+            # Insert new data into the database
+            pg.insert_table(
+                table_name = self.ticker,
+                data = new_data,
+                
+            )
+
+        self.df = pg.read_table(
+            table_name = self.ticker
+        )
 
         # Calculate the MACD and signal line indicators
         
@@ -139,22 +155,37 @@ class MACD():
 
 
 
-## NEXT TASKS
-# Add next indicator FMI 
+## MFI INDICATOR
 
 class MFI():
 
-    def __init__(self, ticker):
-        
+    def __init__(self, ticker, new_data):
+    
         self.ticker = ticker
+        self.new_data = new_data
     
     def get_indicator(self) -> pd.DataFrame:
         
-        # Get daily data
-        av = AlphaVantageApi()
-        # Stored data into a object variable
-        df =  av.get_daily(ticker = self.ticker)
+        # Instance for postgres database
+        pg = PostgreSQL()
 
+        if self.new_data:
+            
+            # Get daily data
+            av = AlphaVantageApi()
+            # Stored data into a object variable
+            new_data =  av.get_daily(ticker = self.ticker)
+
+            # Insert new data into the database
+            pg.insert_table(
+                table_name = self.ticker,
+                data = new_data
+            )
+
+        df = pg.read_table(
+            table_name = self.ticker
+        )
+        
         # typical price
         typical_price = (df["high"] + df["low"] + df["close"])/ 3
         # The MFI is usually calculated using 14 periods of price data
