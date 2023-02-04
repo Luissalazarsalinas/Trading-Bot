@@ -1,5 +1,4 @@
 from fastapi import APIRouter, status
-from sqlalchemy import create_engine
 from app.trading_strategy import MACD
 from app.schemas import Strategyin, MacdOut
 
@@ -35,6 +34,8 @@ def macd_strategy(data: Strategyin):
          
           # index
           response["index"] = list(macd.df.index)
+          # close prince 
+          response["open_price"] = list(macd.df["open"])
           # close prince 
           response["close_price"] = list(macd.df["close"])
           # macd line

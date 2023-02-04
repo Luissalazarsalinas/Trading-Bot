@@ -11,6 +11,7 @@ class Strategyin(BaseModel):
 class MacdOut(Strategyin):
     
     index: list
+    open_price: list
     close_price: list
     macd_line: list
     signal_line: list
@@ -28,6 +29,7 @@ class MacdOut(Strategyin):
 class MfiOut(Strategyin):
 
     index: list
+    open_price: list
     close_price:list
     buy_signal: list
     sell_signal: list

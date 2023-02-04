@@ -1,7 +1,4 @@
 from fastapi import APIRouter, status
-from sqlalchemy import create_engine
-from app.data import PostgreSQL
-from app.config import settings
 from app.trading_strategy import MFI
 from app.schemas import Strategyin, MfiOut
 
@@ -36,6 +33,8 @@ def macd_strategy(data: Strategyin):
          
          # index
          response["index"] = list(mfi.new_df.index)
+         # close prince 
+         response["open_price"] = list(mfi.new_df["open"])
          # close prince 
          response["close_price"] = list(mfi.new_df["close"])
          # macd line
