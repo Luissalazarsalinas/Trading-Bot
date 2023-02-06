@@ -4,3 +4,4 @@ ml_strat.py
 ml_strategy.py
 Trading_algorithms_informations.txt
 Twitter_credential.txt
+docker-compose-dev.yml
