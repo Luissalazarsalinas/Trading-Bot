@@ -61,6 +61,8 @@ def macd_strategy(data: Strategyin):
         # index
         response["index"] = []
         # close prince 
+        response["open_price"] = []
+        # close prince 
         response["close_price"] = []
         # macd line
         response["mfi_indicator"] = []
