@@ -57,26 +57,26 @@ def macd_strategy(data: Strategyin):
          response["message"] = "All it's ok"
 
     except Exception as e:
-
-       # index
-         response["index"] = []
-         # close prince 
-         response["close_price"] = []
-         # macd line
-         response["mfi_indicator"] = []
-         # buy signal
-         response["buy_signal"] = []
-         # sell signal
-         response["sell_signal"] = []
-         # invesment and profit from strategy 
-         response["total_inves_ret"] = 0
-         response["profit_percentage"] = 0
-         # invesment and profit from benchmark 
-         response["total_bm_invs_ret"] = 0
-         response["profit_bm_percentage"] = 0
-         # Performance 
-         response["performance_strategy"] = 0
-         # message
-         response["message"] =str(e) 
+        
+        # index
+        response["index"] = []
+        # close prince 
+        response["close_price"] = []
+        # macd line
+        response["mfi_indicator"] = []
+        # buy signal
+        response["buy_signal"] = []
+        # sell signal
+        response["sell_signal"] = []
+        # invesment and profit from strategy 
+        response["total_inves_ret"] = 0
+        response["profit_percentage"] = 0
+        # invesment and profit from benchmark 
+        response["total_bm_invs_ret"] = 0
+        response["profit_bm_percentage"] = 0
+        # Performance 
+        response["performance_strategy"] = 0
+        # message
+        response["message"] =str(e) 
         
     return response
