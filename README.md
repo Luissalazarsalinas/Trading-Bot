@@ -91,8 +91,12 @@ Recurrent Neural Network Architectures that were tested:
 GRU architecture was chosen as the final model.
 
 ## Rest Api
-- tell over fast api and postgres
-- docker container 
-- docker compose 
-- doker image link
+The trading system was developed as a rest api/wed service using FastAPI (web framework from python). In this sense, this api have services:
 
+- MACD trading strategy service
+- MFI trading strategy service
+- Sentiment detector services
+
+The api's code and its dependencies were packed into a container using Docker. The image create for Docker was stored on Docker hud.
+
+- [Api image](https://hub.docker.com/repository/docker/lfss08/stfastapi/general)
