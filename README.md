@@ -23,7 +23,7 @@ Automated trading system also referred to as algorimith trading, allow traders t
 
  ## Trading Strategies implemets in this project:
  
- Moving average convergence/divergence(MACD)
+#### Moving average convergence/divergence(MACD)
  - The MACD is a technical analysis indicator that aims to identify changes in a share price's momentum. The MACD collects data from different moving averages to help traders indetify possible oppotunities around support and resistance levels.
 
 MACD indicator components:
@@ -34,9 +34,11 @@ MACD indicator components:
 
 The MACD line was created by subtracting the 26-period moving average form the 12-period moving average. on the other hand, the signal line was created taking the 9-period moving average of the MACD.
 
-### Sell and Buy MACD signal
+Sell and Buy MACD signal
 
 The MACD is then displayed as a histogram, a graphical representation of the distance between the two lines. If the MACD cuts through the signal line from below, traders could use it as a buy signal and if it cuts the signal line from above, traders might use it as a sell signal.
+
+#### Money Flow Index(MFI)
 
 
 
