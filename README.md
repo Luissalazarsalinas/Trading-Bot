@@ -62,6 +62,7 @@ Sell and Buy MFI signal
 Data preprocessing stets:
  - Transform the data from json format to a dataframe format
  - Create datetime index
+ - Stored the data into a PostGres Database
 
 
 #### Text data
@@ -80,25 +81,18 @@ Data preprocessing stets:
  - Create target variable (Get sentiments)
 
 
+## Sentiment Analysis
 
-## Modelling 
-Machine Learning Algorithms that were tested:
- - Random Forest 
- - LightGBM
- - XGBoost
-
-Xgboost was the model with better performance with the validation set:
- - Accuracy: 0.93
- - F1-Score: 0.90
- - ROC-AUC: 0.93
+### Modelling 
+Recurrent Neural Network Architectures that were tested:
+ - LSTM
+ - GRU
  
-Xgboost was chosen as the final model, and its hyperparameters were optimized using hyperopt(library) with a Bayesian optimization as search strategy.
+GRU architecture was chosen as the final model.
 
-Final model performance with the test set:
- - Accuracy: 0.99
- - F1-Score: 0.89
- - ROC-AUC: 0.91
- 
-
-
+## Rest Api
+- tell over fast api and postgres
+- docker container 
+- docker compose 
+- doker image link
 
