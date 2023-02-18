@@ -18,15 +18,13 @@ Automated trading system also referred to as algorimith trading, allow traders t
 - Improving order entry speed
 - Diversiying trading
 
-On the other hand, [insert text over the importance of sentiment analysis]
+On the other hand,  Sentiment analysis is also one of the more successful methods of including the effects of market psychology in a trading strategy. Empirical evidence suggests that investor sentiment is one of the most reliable indicators of future price movements.
 
+Therefore, in this project, we develop a Streamlit App that utilizes an Automated Trading System as an API to get two trading strategies (MACD and MFI) and a sentiment detector based on a deep learning model(GRU). 
 
-Therefore, in this project we develop a Streamlit App that utilizes a Machine Learning model(XGBoost) as an API to detect potential fraud in credit card transactions, based on the following criteria: Type of transaction, Amount(money), Old balance orig, New balance orig, Old balance dest, New balance dest.
+The App can be viewed through this [link]()
 
-The App can be viewed through this [link](https://luissalazarsalinas-fraud-detection-fraud-detection-app-zvrvsp.streamlitapp.com/)
-
-[NoteBook]()
-
+[Deep Learning Model NoteBook]()
 
 ## Trading system
 
@@ -90,13 +88,13 @@ Recurrent Neural Network Architectures that were tested:
  
 GRU architecture was chosen as the final model.
 
-## Rest Api
-The trading system was developed as a rest api/wed service using FastAPI (web framework from python). In this sense, this api have services:
+## REST API
+The trading system was developed as a rest API/web service using FastAPI (web framework from python). In this sense, this API has three different services:
 
 - MACD trading strategy service
 - MFI trading strategy service
 - Sentiment detector services
 
-The api's code and its dependencies were packed into a container using Docker. The image create for Docker was stored on Docker hud.
+The API's code and its dependencies were packed into a container using Docker. The Docker image was stored on Docker hud.
 
-- [Api image](https://hub.docker.com/repository/docker/lfss08/stfastapi/general)
+- [API image](https://hub.docker.com/repository/docker/lfss08/stfastapi/general)
