@@ -8,9 +8,6 @@
 
 An end-to-end Data Science and Machine Learning Project.
 
-## Goal
-
-
 ## **Problem Statement**
 
 Automated trading system also referred to as algorimith trading, allow traders to establish specific rules for both trade entries and exits that, once programmed, can be automatically executed via a computer. In this sese, there is a long list of advantages to having a computer monitor the markets for trading opportunities and execute the trades, including:
@@ -21,7 +18,19 @@ Automated trading system also referred to as algorimith trading, allow traders t
 - Improving order entry speed
 - Diversiying trading
 
- ## Trading Strategies implemets in this project:
+On the other hand, [insert text over the importance of sentiment analysis]
+
+
+Therefore, in this project we develop a Streamlit App that utilizes a Machine Learning model(XGBoost) as an API to detect potential fraud in credit card transactions, based on the following criteria: Type of transaction, Amount(money), Old balance orig, New balance orig, Old balance dest, New balance dest.
+
+The App can be viewed through this [link](https://luissalazarsalinas-fraud-detection-fraud-detection-app-zvrvsp.streamlitapp.com/)
+
+[NoteBook]()
+
+
+## Trading system
+
+### Trading Strategies implemets in this project:
  
 #### Moving average convergence/divergence(MACD)
  - The MACD is a technical analysis indicator that aims to identify changes in a share price's momentum. The MACD collects data from different moving averages to help traders indetify possible oppotunities around support and resistance levels.
@@ -36,21 +45,28 @@ The MACD line was created by subtracting the 26-period moving average form the 1
 
 Sell and Buy MACD signal
 
-The MACD is then displayed as a histogram, a graphical representation of the distance between the two lines. If the MACD cuts through the signal line from below, traders could use it as a buy signal and if it cuts the signal line from above, traders might use it as a sell signal.
+- The MACD is then displayed as a histogram, a graphical representation of the distance between the two lines. If the MACD cuts through the signal line from below, traders could use it as a buy signal and if it cuts the signal line from above, traders might use it as a sell signal.
 
 #### Money Flow Index(MFI)
+- The MFI is a technical oscillator that measures the inflow an outflow of money into an asset over a period of time. it looks at both price and volume to assess the buying and selling pressures in a given market.
+
+Sell and Buy MFI signal
+
+- The money flow index works by oscillating on a scale from zero to 100. If the MFI reading is obove 80, the market would be considered overbounght, while a reading of 20 or below is a signal for oversold conditions.
+
+## Data
+
+#### Financial data
+- Finance data (daily trading) were extracted from [Alpha Vantage API](https://www.alphavantage.co/). 
+
+Data preprocessing stets:
+ - Transform the data from json format to a dataframe format
+ - Create datetime index
 
 
+#### Text data
+- 
 
-
-
-
-
-Therefore, in this project we develop a Streamlit App that utilizes a Machine Learning model(XGBoost) as an API to detect potential fraud in credit card transactions, based on the following criteria: Type of transaction, Amount(money), Old balance orig, New balance orig, Old balance dest, New balance dest.
-
-The App can be viewed through this [link](https://luissalazarsalinas-fraud-detection-fraud-detection-app-zvrvsp.streamlitapp.com/)
-
-[NoteBook]()
 
 ## Data Preparation
 
