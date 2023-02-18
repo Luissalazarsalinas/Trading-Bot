@@ -1,4 +1,4 @@
-# **Trading Strategies Setiment Project**
+# **Trading Strategies Project**
 
 [![Language](https://img.shields.io/badge/Python-darkblue.svg?style=flat&logo=python&logoColor=white)](https://www.python.org)
 [![Framework](https://img.shields.io/badge/sklearn-darkorange.svg?style=flat&logo=scikit-learn&logoColor=white)](https://scikit-learn.org/)
@@ -6,7 +6,7 @@
 [![Framework](https://img.shields.io/badge/Streamlit-red.svg?style=flat&logo=streamlit&logoColor=white)](https://streamlit.io/)
 ![Docker](https://img.shields.io/badge/Docker-blue?style=flat&logo=docker&logoColor=white)
 
-An end-to-end Data Science and Machine Learning Project.
+An end-to-end Data Science and Machine Learning Project to implement an Automated trading system.
 
 ## **Problem Statement**
 
