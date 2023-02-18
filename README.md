@@ -65,19 +65,21 @@ Data preprocessing stets:
 
 
 #### Text data
-- 
+- The tweets data were extrated from Twetter app using snscrape python library.
+
+Keywords for searching:
+ - "Stock Market"
+ - "Stock Market sentiment"
+ - "Stocks"
+
+Data preprocessing stets:
+ - Transform the data into a dataframe format
+ - Clean tweets data 
+ - Stored the data in a CSV file
+ - Cleaning and feature engineering (Lemmatizer and remove Stock words)
+ - Create target variable (Get sentiments)
 
 
-## Data Preparation
-
-Credit card transaction is a syntetic financial dataset created using a simulator called PaySim. In this sense, PaySim uses aggregated data from the private dataset to generate a synthetic dataset that resembles the normal operation of transactions and injects malicious behaviour to later evaluate the performance of fraud detection methods.
-
-#### Data preprocessing stets:
- - Clean the data: removed duplicate values, missing values, unnecessary and leakage variables
- - Transform no-numerical variables to numerical variables
- - Split the data into train, validation and test sets
-
-Source dataset: [Credit card data](https://www.kaggle.com/datasets/ealaxi/paysim1)
 
 ## Modelling 
 Machine Learning Algorithms that were tested:
@@ -97,13 +99,6 @@ Final model performance with the test set:
  - F1-Score: 0.89
  - ROC-AUC: 0.91
  
- Feature importance
- ![image](https://github.com/Luissalazarsalinas/Fraud-Detection/blob/master/img/Feature_importance.png)
-The variables that contribute most to the XGBoost final model were:
- - Type of transferent
- - New balance orig
- - Old balance orig
-These variables could be good predictors to detect fraud in credit card transactions.
 
 
 
