@@ -64,7 +64,7 @@ Data preprocessing stets:
 
 
 #### Text data
-- The tweets data were extrated from Twetter app using snscrape python library.
+- The tweets data were extrated from Twitter app using snscrape python library.
 
 Keywords for searching:
  - "Stock Market"
