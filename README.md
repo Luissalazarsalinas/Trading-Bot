@@ -20,7 +20,7 @@ Automated trading system also referred to as algorimith trading, allow traders t
 
 On the other hand,  Sentiment analysis is also one of the more successful methods of including the effects of market psychology in a trading strategy. Empirical evidence suggests that investor sentiment is one of the most reliable indicators of future price movements.
 
-Therefore, in this project, we develop a Streamlit App that utilizes an Automated Trading System as an API to get two trading strategies (MACD and MFI) and a sentiment detector based on a deep learning model(GRU). 
+Therefore, in this project, we develop a Streamlit App that utilizes an Automated Trading System as an API to get one trading strategy (MACD and MFI) and a sentiment detector based on a deep learning model(GRU). 
 
 The App can be viewed through this [link]()
 
@@ -44,13 +44,6 @@ The MACD line was created by subtracting the 26-period moving average form the 1
 Sell and Buy MACD signal
 
 - The MACD is then displayed as a histogram, a graphical representation of the distance between the two lines. If the MACD cuts through the signal line from below, traders could use it as a buy signal and if it cuts the signal line from above, traders might use it as a sell signal.
-
-#### Money Flow Index(MFI)
-- The MFI is a technical oscillator that measures the inflow an outflow of money into an asset over a period of time. it looks at both price and volume to assess the buying and selling pressures in a given market.
-
-Sell and Buy MFI signal
-
-- The money flow index works by oscillating on a scale from zero to 100. If the MFI reading is obove 80, the market would be considered overbounght, while a reading of 20 or below is a signal for oversold conditions.
 
 ## Data
 
