@@ -42,30 +42,45 @@ def tokenizer(data):
 
     return data
 
-
-# Add the path or endpoint 
-@router.post("/", status_code= status.HTTP_201_CREATED)
-def inference(data: Deeplearningin):
-
+def predict(data):
     # Data sentences
-    data_sentence  = list(data.Teewts)
+    data_sentence  = list(data)
     
     # model
     model = get_model()
     try:
         data_tf = tokenizer(data_sentence)
     except Exception as e:
-        raise print(e)
+        print(e)
 
     # Inference 
     y_pred = model.predict(data_tf).argmax()
 
-    # Result
-    if y_pred == 0:
-        return "Negative"
+    return y_pred
+
+# # Add the path or endpoint 
+# @router.post("/", status_code= status.HTTP_201_CREATED)
+# def inference(data: Deeplearningin):
+
+#     # Data sentences
+#     data_sentence  = list(data.Teewts)
     
-    elif y_pred == 1:
-        return "Positive"
+#     # model
+#     model = get_model()
+#     try:
+#         data_tf = tokenizer(data_sentence)
+#     except Exception as e:
+#         raise print(e)
+
+#     # Inference 
+#     y_pred = model.predict(data_tf).argmax()
+
+#     # Result
+#     if y_pred == 0:
+#         return "Negative"
     
-    else:
-        return "Neutro"
+#     elif y_pred == 1:
+#         return "Positive"
+    
+#     else:
+#         return "Neutro"

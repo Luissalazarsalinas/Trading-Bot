@@ -29,7 +29,7 @@ def home():
 
 # Add routers
 app.include_router(macd.router)
-app.include_router(mfi.router)
+# app.include_router(mfi.router)
 app.include_router(sentiment_analysis.router)
 
 #app.include_router(ml_strat.router)
