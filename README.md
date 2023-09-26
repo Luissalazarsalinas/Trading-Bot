@@ -6,7 +6,7 @@
 [![Framework](https://img.shields.io/badge/Streamlit-red.svg?style=flat&logo=streamlit&logoColor=white)](https://streamlit.io/)
 ![Docker](https://img.shields.io/badge/Docker-blue?style=flat&logo=docker&logoColor=white)
 
-An end-to-end Data Science and Machine Learning Project to implement an Automated trading system.
+Freelancer Project - Streaming process pipeline and Trading Bot.
 
 ## **Problem Statement**
 
